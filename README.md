@@ -60,3 +60,5 @@ $ go run ./cmd/producer client <clientId>
 Para o exemplo, vamos enviar duas mensagens, uma com o pagamento e outra com o novo cliente.
 
 Ao receber um pagamento de um cliente com o **ID 1**, o pagamento não vai ser processado, a mensagem é enviada para uma fila e o delay vai aumentando, até que a mensagem de cadastro do cliente é recebida, no proximo recebimento do pagamento ele será processado e a operação finaliza.
+
+https://github.com/Sup3r-Us3r/race-condition/assets/22561893/2fa2efe3-c0d2-498a-948d-f95115d327eb
