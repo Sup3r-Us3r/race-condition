@@ -1,0 +1,21 @@
+version: "3.2"
+services:
+  rabbitmq:
+    image: rabbitmq:management-alpine
+    container_name: 'rabbitmq'
+    environment:
+      - RABBITMQ_PLUGINS_DIR=/opt/rabbitmq/plugins:/usr/lib/rabbitmq/plugins
+    ports:
+        - 5672:5672
+        - 15672:15672
+    volumes:
+      - .docker/rabbitmq/data/:/var/lib/rabbitmq/
+      - .docker/rabbitmq/log/:/var/log/rabbitmq
+      - ./rabbitmq/plugins:/usr/lib/rabbitmq/plugins
+      - ./rabbitmq/enabled_plugins:/etc/rabbitmq/enabled_plugins:rw
+    networks:
+      - rabbit
+
+networks:
+  rabbit:
+    driver: bridge
