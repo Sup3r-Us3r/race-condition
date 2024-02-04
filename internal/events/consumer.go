@@ -50,7 +50,7 @@ func CreateQueue(ch *amqp.Channel, queueName string) amqp.Queue {
 		false,     // delete when unused
 		false,     // exclusive
 		false,     // no-wait
-		nil,       // arguments
+		nil,       // args
 	)
 	FailOnError(err, "")
 
